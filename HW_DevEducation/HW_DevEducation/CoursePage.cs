@@ -16,7 +16,7 @@ namespace HW_DevEducation
             this.driver = driver;
         }
 
-        By PageTitle = By.CssSelector("html body.small.ru.deveducation.webp div.wrapper main.main section.origin-courses div._container.origin-courses__container h1.origin-courses__title.title2");
+        public By PageTitle = By.CssSelector("html body.small.ru.deveducation.webp div.wrapper main.main section.origin-courses div._container.origin-courses__container h1.origin-courses__title.title2");
         By DniproLink = By.XPath("/html/body/div[2]/main/section[1]/div/div/ul/li[1]/a");
         By KyivLink = By.XPath("/html/body/div[2]/main/section[1]/div/div/ul/li[2]/a");
         By BakuLink = By.XPath("/html/body/div[2]/main/section[1]/div/div/ul/li[3]/a");
@@ -24,7 +24,7 @@ namespace HW_DevEducation
         By KharkivLink = By.XPath("/html/body/div[2]/main/section[1]/div/div/ul/li[5]/a");
 
         By CourseForm = By.Name("ajax-form");
-        By FormTitle = By.XPath("/html/body/div[2]/main/div[1]/section/div/h2");
+        public By FormTitle = By.XPath("/html/body/div[2]/main/div[1]/section/div/h2");
         By UserNameInput = By.Name("signUpCourse1Name");
         By UserPhoneInput = By.Name("signUpCourse1Tell");
         By UserEmailInput = By.Name("signUpCourse1Email");
@@ -59,6 +59,10 @@ namespace HW_DevEducation
             SelectElement selectElement = new SelectElement(selectList);
             selectElement.SelectByValue(course);
             return this;
+        }
+        public string GetCoursePageTitle(By locator)
+        {
+            return driver.FindElement(locator).Text;
         }
     }
 }

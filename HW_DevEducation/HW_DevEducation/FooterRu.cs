@@ -22,8 +22,6 @@ namespace HW_DevEducation
         public By ContactsLink = By.XPath("/html/body/div[2]/footer/div/nav/ul/li[6]/a");
         public By FaqLink = By.XPath("/html/body/div[2]/footer/div/nav/ul/li[7]/a");
 
-
-
         public void ClickOnSocialIconLink(By locator)
         {
             driver.FindElement(locator).Click();

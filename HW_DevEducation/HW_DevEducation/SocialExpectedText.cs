@@ -10,7 +10,7 @@ namespace HW_DevEducation
     public class SocialExpectedText
     {        
         public By ExPolicyLink = By.XPath("/html/body/div[2]/main/div/div/h1");
-        public By ExFacebookLink = By.Selector("#u_0_0 > span._33vv > a > span");
+        public By ExFacebookLink = By.CssSelector("#u_0_0 > span._33vv > a > span");
         public By ExInstaLink = By.XPath("/html/body/div[2]/footer/div/ul/li[3]/a");
         public By ExVkLink = By.XPath("/html/body/div[2]/footer/div/ul/li[4]/a");
         public By ExYoutubeLink = By.XPath("/html/body/div[2]/footer/div/ul/li[5]/a");
