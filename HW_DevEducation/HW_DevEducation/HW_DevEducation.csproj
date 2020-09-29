@@ -63,7 +63,10 @@
     <Compile Include="HeaderRu.cs" />
     <Compile Include="MainPage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SocialExpectedText.cs" />
     <Compile Include="Test\DevedTest.cs" />
+    <Compile Include="Test\HeaderLinkTest.cs" />
+    <Compile Include="Test\SocialTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

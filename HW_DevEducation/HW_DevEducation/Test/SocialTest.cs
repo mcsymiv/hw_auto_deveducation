@@ -10,18 +10,22 @@ using System.Threading.Tasks;
 namespace HW_DevEducation.Test
 {
     [TestFixture]
-    public class DevedTest
+    public class SocialTest
     {
         IWebDriver chrome = new ChromeDriver(@"C:\Users\mcsymiv\Desktop\git\chromedriver_win32");
         MainPage mp_POM;
+        CoursePage cp_POM;
+        FooterRu fr_POM; 
         HeaderCityRu head_city_ru_POM;
 
+
         [SetUp]
-        public void OpenDevedPage()
+        public void OpenSocialPage()
         {
             mp_POM = new MainPage(chrome);
+            cp_POM = new CoursePage(chrome);
+            fr_POM = new FooterRu(chrome);
             head_city_ru_POM = new HeaderCityRu(chrome);
-
             chrome.Navigate().GoToUrl("https://deveducation.com");
             chrome.Manage().Window.Maximize();
             chrome.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(3);
