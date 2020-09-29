@@ -59,6 +59,7 @@
     <Compile Include="Footer.cs" />
     <Compile Include="FooterRu.cs" />
     <Compile Include="Header.cs" />
+    <Compile Include="HeaderCityRu.cs" />
     <Compile Include="HeaderRu.cs" />
     <Compile Include="MainPage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -13,8 +13,9 @@ namespace HW_DevEducation.Test
     public class DevedTest
     {
         IWebDriver chrome = new ChromeDriver(@"C:\Users\mcsymiv\Desktop\git\chromedriver_win32");
-        MainPage mp_POM;
+        public MainPage mp_POM;
         CoursePage cp_POM;
+        HeaderCityRu head_city_ru_POM;
 
 
         [SetUp]
@@ -22,6 +23,8 @@ namespace HW_DevEducation.Test
         {
             mp_POM = new MainPage(chrome);
             cp_POM = new CoursePage(chrome);
+            head_city_ru_POM = new HeaderCityRu(chrome);
+            
             chrome.Navigate().GoToUrl("https://deveducation.com");
             chrome.Manage().Window.Maximize();
             chrome.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(3);
@@ -35,8 +38,8 @@ namespace HW_DevEducation.Test
         public void UserOpensKyivCoursePage(string localization)
         {
             mp_POM.SelectCityOnMap(mp_POM.KyivLinkOnMap);
-            string localText = chrome.FindElement(By.XPath("/html/body/div[2]/div/header/div/div[1]/ul/li[2]/button")).Text;
-            Assert.AreEqual(localization, localText);
+            string localCityText = head_city_ru_POM.CurrentCityText(head_city_ru_POM.currentCity);
+            Assert.AreEqual(localization, localCityText);
         }
     }
 }

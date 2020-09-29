@@ -20,9 +20,10 @@ namespace HW_DevEducation
         public By KharkivLinkOnMap = By.XPath("/html/body/div[2]/main/section/div/div[2]/div/a[3]");
         public By BakuLinkOnMap = By.XPath("/html/body/div[2]/main/section/div/div[2]/div/a[5]");
 
-        public void SelectCityOnMap(By locator)
+        public MainPage SelectCityOnMap(By locator)
         {
             driver.FindElement(locator).Click();
+            return this;
         }
     }
 }
