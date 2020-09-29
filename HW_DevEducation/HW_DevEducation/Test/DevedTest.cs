@@ -16,6 +16,7 @@ namespace HW_DevEducation.Test
         MainPage mp_POM;
         CoursePage cp_POM;
 
+
         [SetUp]
         public void OpenDevedPage()
         {
@@ -24,6 +25,16 @@ namespace HW_DevEducation.Test
             chrome.Navigate().GoToUrl("https://deveducation.com");
             chrome.Manage().Window.Maximize();
             chrome.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(3);
+        }
+        [TearDown]
+        public void CloseBroser()
+        {
+            chrome.Quit();
+        }
+        [Test]
+        public void UserGoesToKyivCoursePage()
+        {
+            mp_POM.SelectCityOnMap(mp_POM.KyivLinkOnMap);
         }
     }
 }
