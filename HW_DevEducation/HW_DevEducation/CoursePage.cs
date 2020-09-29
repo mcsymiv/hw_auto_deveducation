@@ -1,4 +1,5 @@
 ﻿using OpenQA.Selenium;
+using OpenQA.Selenium.Support.UI;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -39,6 +40,26 @@ namespace HW_DevEducation
         public CoursePage EnterUserPhone(string userPhone)
         {
             driver.FindElement(UserPhoneInput).SendKeys(userPhone);
+            return this;
+        }
+        public CoursePage EnterUserEmail(string userEmail)
+        {
+            driver.FindElement(UserEmailInput).SendKeys(userEmail);
+            return this;
+        }
+
+        public CoursePage SelectCity(string city)
+        {
+            IWebElement selectList = driver.FindElement(SelectCityList);
+            SelectElement selectElement = new SelectElement(selectList);
+            selectElement.SelectByValue(city);
+            return this;
+        }
+        public CoursePage SelectCourse(string course)
+        {
+            IWebElement selectList = driver.FindElement(SelectCourseList);
+            SelectElement selectElement = new SelectElement(selectList);
+            selectElement.SelectByValue(course);
             return this;
         }
     }
