@@ -13,7 +13,7 @@ namespace HW_DevEducation.Test
     public class DevedTest
     {
         IWebDriver chrome = new ChromeDriver(@"C:\Users\mcsymiv\Desktop\git\chromedriver_win32");
-        public MainPage mp_POM;
+        MainPage mp_POM;
         CoursePage cp_POM;
         HeaderCityRu head_city_ru_POM;
 
@@ -21,7 +21,7 @@ namespace HW_DevEducation.Test
         [SetUp]
         public void OpenDevedPage()
         {
-            mp_POM = new MainPage(chrome);
+
             cp_POM = new CoursePage(chrome);
             head_city_ru_POM = new HeaderCityRu(chrome);
             
