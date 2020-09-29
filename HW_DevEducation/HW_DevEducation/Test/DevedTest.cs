@@ -45,31 +45,22 @@ namespace HW_DevEducation.Test
             {
                 case "Киев":
                     mp_POM.SelectCityOnMap(mp_POM.KyivLinkOnMap);
-                    localCityText = head_city_ru_POM.CurrentCityText(head_city_ru_POM.currentCity);
-                    Assert.AreEqual(localization, localCityText);
                     break;
                 case "Днепр":
                     mp_POM.SelectCityOnMap(mp_POM.DniproLinkOnMap);
-                    localCityText = head_city_ru_POM.CurrentCityText(head_city_ru_POM.currentCity);
-                    Assert.AreEqual(localization, localCityText);
                     break;
                 case "Харьков":
                     mp_POM.SelectCityOnMap(mp_POM.KharkivLinkOnMap);
-                    localCityText = head_city_ru_POM.CurrentCityText(head_city_ru_POM.currentCity);
-                    Assert.AreEqual(localization, localCityText);
                     break;
                 case "Баку":
                     mp_POM.SelectCityOnMap(mp_POM.BakuLinkOnMap);
-                    localCityText = head_city_ru_POM.CurrentCityText(head_city_ru_POM.currentCity);
-                    Assert.AreEqual(localization, localCityText);
                     break;
                 case "Санкт-Петербугр":
                     mp_POM.SelectCityOnMap(mp_POM.SpbLinkOnMap);
-                    localCityText = head_city_ru_POM.CurrentCityText(head_city_ru_POM.currentCity);
-                    Assert.AreEqual(localization, localCityText);
                     break;
             }
-
+            localCityText = head_city_ru_POM.CurrentCityText(head_city_ru_POM.currentCity);
+            Assert.AreEqual(localization, localCityText);
         }
 
 

@@ -13,6 +13,7 @@ namespace HW_DevEducation.Test
     public class HeaderLinkTest
     {
         IWebDriver chrome = new ChromeDriver(@"C:\Users\mcsymiv\Desktop\git\chromedriver_win32");
+
         MainPage mp_POM;
         HeaderCityRu head_ru_POM;
         CoursePage cr_POM;
@@ -59,34 +60,29 @@ namespace HW_DevEducation.Test
                 case "Наши курсы":
                     head_ru_POM.ClickOnHeaderLink(head_ru_POM.CourseLink);
                     actualPageTitle = cr_POM.GetCoursePageTitle(cr_POM.PageTitle);
-                    Assert.AreEqual(pageTitle, actualPageTitle);
                     break;
                 case "Наши выпускники":
                     head_ru_POM.ClickOnHeaderLink(head_ru_POM.GraduatesLink);
                     actualPageTitle = gr_POM.GetGraduatePageTitle(gr_POM.PageTitle);
-                    Assert.AreEqual(pageTitle, actualPageTitle);
                     break;
                 case "Новости":
                     head_ru_POM.ClickOnHeaderLink(head_ru_POM.NewsLink);
                     actualPageTitle = news_POM.GetNewsPageTitle(news_POM.PageTitle);
-                    Assert.AreEqual(pageTitle, actualPageTitle);
                     break;
                 case "Блог":
                     head_ru_POM.ClickOnHeaderLink(head_ru_POM.BlogLink);
                     actualPageTitle = blog_POM.GetBlogPageTitle(blog_POM.PageTitle);
-                    Assert.AreEqual(pageTitle, actualPageTitle);
                     break;
                 case "О нас":
                     head_ru_POM.ClickOnHeaderLink(head_ru_POM.AboutUsLink);
                     actualPageTitle = about_POM.GetAboutPageTitle(about_POM.PageTitle);
-                    Assert.AreEqual(pageTitle, actualPageTitle);
                     break;
                 case "Наши контакты":
                     head_ru_POM.ClickOnHeaderLink(head_ru_POM.ContactsLink);
                     actualPageTitle = contact_POM.GetContactPageTitle(contact_POM.PageTitle);
-                    Assert.AreEqual(pageTitle, actualPageTitle);
                     break;
             }
+            Assert.AreEqual(pageTitle, actualPageTitle);
         }
     }
 }
