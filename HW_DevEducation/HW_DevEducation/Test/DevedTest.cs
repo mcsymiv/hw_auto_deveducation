@@ -31,10 +31,12 @@ namespace HW_DevEducation.Test
         {
             chrome.Quit();
         }
-        [Test]
-        public void UserGoesToKyivCoursePage()
+        [TestCase("Киев")]
+        public void UserOpensKyivCoursePage(string localization)
         {
             mp_POM.SelectCityOnMap(mp_POM.KyivLinkOnMap);
+            string localText = chrome.FindElement(By.XPath("/html/body/div[2]/div/header/div/div[1]/ul/li[2]/button")).Text;
+            Assert.AreEqual(localization, localText);
         }
     }
 }
