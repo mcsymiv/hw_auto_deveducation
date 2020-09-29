@@ -36,7 +36,6 @@ namespace HW_DevEducation
             driver.FindElement(UserNameInput).SendKeys(userName);
             return this;
         }
-
         public CoursePage EnterUserPhone(string userPhone)
         {
             driver.FindElement(UserPhoneInput).SendKeys(userPhone);
@@ -47,7 +46,6 @@ namespace HW_DevEducation
             driver.FindElement(UserEmailInput).SendKeys(userEmail);
             return this;
         }
-
         public CoursePage SelectCity(string city)
         {
             IWebElement selectList = driver.FindElement(SelectCityList);
