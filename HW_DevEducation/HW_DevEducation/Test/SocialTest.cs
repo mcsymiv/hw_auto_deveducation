@@ -13,7 +13,7 @@ namespace HW_DevEducation.Test
     [TestFixture]
     public class SocialTest
     {
-        IWebDriver chrome = new ChromeDriver(@"C:\Users\mcsymiv\Desktop\git\chromedriver_win32");
+        IWebDriver chrome = new ChromeDriver(@"C:\Users\mcsymiv\Desktop\git\chromedriver_win32"); //@"I:\DevEducation практика\selenium"); 
         FooterRu fr_POM;
         SocialExpectedText sxt_POM;
 
@@ -59,27 +59,24 @@ namespace HW_DevEducation.Test
                     actualText = sxt_POM.CurrentSocialText(sxt_POM.ExInstaLink);
                     break;
 
-                    //case "DevEducation": //Youtube 
-                    //    fr_POM.SelectCityOnMap(mp_POM.BakuLinkOnMap);
-                    //    localCityText = head_city_ru_POM.CurrentCityText(head_city_ru_POM.currentCity);
-                    //    Assert.AreEqual(localization, localCityText);
-                    //    break;
-                    //case "Международный IT-колледж DevEducation":  //LinkedIn
-                    //    fr_POM.SelectCityOnMap(mp_POM.SpbLinkOnMap);
-                    //    localCityText = head_city_ru_POM.CurrentCityText(head_city_ru_POM.currentCity);
-                    //    Assert.AreEqual(localization, localCityText);
-                    //    break;
-                    //case "@DevEducation2":  //Twitter
-                    //    fr_POM.SelectCityOnMap(mp_POM.SpbLinkOnMap);
-                    //    localCityText = head_city_ru_POM.CurrentCityText(head_city_ru_POM.currentCity);
-                    //    Assert.AreEqual(localization, localCityText);
-                    //    break;
+                case "DevEducation": //Youtube 
+                    sxt_POM.ClickOnFooterLink(fr_POM.YoutubeLink);
+                    chrome.SwitchTo().Window(chrome.WindowHandles.Last());
+                    actualText = sxt_POM.CurrentSocialText(sxt_POM.ExYoutubeLink);
+                    break;
+                case "Международный IT-колледж DevEducation":  //LinkedIn
+                    sxt_POM.ClickOnFooterLink(fr_POM.LinkedLink);
+                    chrome.SwitchTo().Window(chrome.WindowHandles.Last());
+                    actualText = sxt_POM.CurrentSocialText(sxt_POM.ExLinkedLink);
+                    break;
+                case "@DevEducation2":  //Twitter
+                    sxt_POM.ClickOnFooterLink(fr_POM.TwitterLnk);
+                    chrome.SwitchTo().Window(chrome.WindowHandles.Last());
+                    actualText = sxt_POM.CurrentSocialText(sxt_POM.ExTwitterLnk);
+                    break;
             }
             Assert.AreEqual(localization, actualText);
 
         }
-
-
-
     }
 }

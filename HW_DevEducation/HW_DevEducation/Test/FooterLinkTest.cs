@@ -12,7 +12,7 @@ namespace HW_DevEducation.Test
     [TestFixture]
     public class FooterLinkTest
     {
-        IWebDriver chrome = new ChromeDriver(@"//C:\Users\mcsymiv\Desktop\git\chromedriver_win32");
+        IWebDriver chrome = new ChromeDriver(@"C:\Users\mcsymiv\Desktop\git\chromedriver_win32");
 
         MainPage mp_POM;
         FooterRu fr_POM;
