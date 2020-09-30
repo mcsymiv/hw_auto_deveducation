@@ -26,10 +26,10 @@ namespace HW_DevEducation.Deved_POMs
 
         public By sendButton = By.CssSelector("#entry-popup-form > div:nth-child(6) > button.form__btn.field.form-btn.popup__button__valid.popup__button__valid__indent.g-recaptcha");
         public By captcha = By.CssSelector("# recaptcha-verify-button");
-        public By erorNumber = By.CssSelector("#entry-popup-form > div:nth-child(2)");
-        public By erorEmail = By.CssSelector("#entry-popup-form > div:nth-child(3)");
-        public By erorSity = By.CssSelector("#entry-popup-form > div:nth-child(4)");
-        public By erorCourse = By.CssSelector("#entry-popup-form > div:nth-child(5)");
+        public By errorNumber = By.CssSelector("#entry-popup-form > div:nth-child(2)");
+        public By errorEmail = By.CssSelector("#entry-popup-form > div:nth-child(3)");
+        public By errorCity = By.CssSelector("#entry-popup-form > div:nth-child(4)");
+        public By errorCourse = By.CssSelector("#entry-popup-form > div:nth-child(5)");
 
 
         public SignUpCourseForm StartForm()
@@ -57,27 +57,13 @@ namespace HW_DevEducation.Deved_POMs
             driver.FindElement(sendButton).Click();
             return this;
         }
-        public SignUpCourseForm SelectCity(string city)
-        {
-            IWebElement selectList = driver.FindElement(selectCityList);
-            SelectElement selectElement = new SelectElement(selectList);
-            selectElement.SelectByValue(city);
-            return this;
-        }
-        public SignUpCourseForm SelectCourse(string course)
-        {
-            IWebElement selectList = driver.FindElement(selectCourseList);
-            SelectElement selectElement = new SelectElement(selectList);
-            selectElement.SelectByValue(course);
-            return this;
-        }
         public SignUpCourseForm FindCaptcha()
         {
             IWebElement selectList = driver.FindElement(captcha);
             return this;
         }
 
-        public string CurrentErorText(By locator)
+        public string CurrentErrorText(By locator)
         {
             return driver.FindElement(locator).Text;
         }
@@ -87,19 +73,20 @@ namespace HW_DevEducation.Deved_POMs
             driver.FindElement(userPhoneInput).Click();
         }
 
-        public void ChoseSity(int index)
+        public SignUpCourseForm ChooseCity(int index)
         {
             IWebElement dropdownCity = driver.FindElement(By.Id("city-popup"));
             var selectElementCity = new SelectElement(dropdownCity);
             selectElementCity.SelectByIndex(index);
-
+            return this;
         }
 
-        public void ChoseCourse(int index)
+        public SignUpCourseForm ChooseCourse(int index)
         {
             IWebElement dropdownCourse = driver.FindElement(By.Id("course-popup"));
             var selectElementCourse = new SelectElement(dropdownCourse);
             selectElementCourse.SelectByIndex(index);
+            return this;
         }
 
     }
