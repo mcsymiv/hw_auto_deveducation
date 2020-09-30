@@ -19,10 +19,7 @@ namespace HW_DevEducation.Deved_POMs
         public By userNameInput = By.CssSelector("#entry-popup-form > div:nth-child(1) > input");
         public By userPhoneInput = By.CssSelector("#entry-popup-form > div:nth-child(2) > input");
         public By userEmailInput = By.CssSelector("#entry-popup-form > div:nth-child(3) > input");
-
-        public By nameOfForm = By.XPath("/html/body/div[2]/main/div[2]/div/div/div");
-        public By selectCityList = By.CssSelector("s#city-popup");
-        public By selectCourseList = By.CssSelector("#course-popup");
+        public By UserCityInputField = By.XPath("/html/body/div[2]/main/div[2]/div/div/form/div[4]/label");
 
         public By sendButton = By.CssSelector("#entry-popup-form > div:nth-child(6) > button.form__btn.field.form-btn.popup__button__valid.popup__button__valid__indent.g-recaptcha");
         public By captcha = By.CssSelector("# recaptcha-verify-button");
@@ -30,6 +27,9 @@ namespace HW_DevEducation.Deved_POMs
         public By errorEmail = By.CssSelector("#entry-popup-form > div:nth-child(3)");
         public By errorCity = By.CssSelector("#entry-popup-form > div:nth-child(4)");
         public By errorCourse = By.CssSelector("#entry-popup-form > div:nth-child(5)");
+
+        public By ErrorDataMessage = By.XPath("/html/body/div[2]/main/div[2]/div/div/form/div[1]");
+        public By CloseCaptchaWindow = By.XPath("/html/body/div[3]/div[1]");
 
 
         public SignUpCourseForm StartForm()
@@ -65,7 +65,13 @@ namespace HW_DevEducation.Deved_POMs
 
         public string CurrentErrorText(By locator)
         {
-            return driver.FindElement(locator).Text;
+            return driver.FindElement(locator).GetAttribute("data-error");
+        }
+
+        public SignUpCourseForm MakeClickOnFormField(By locator)
+        {
+            driver.FindElement(locator).Click();
+            return this;
         }
 
         public SignUpCourseForm ChooseCity(int index)
