@@ -55,13 +55,26 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CoursePage.cs" />
-    <Compile Include="Footer.cs" />
-    <Compile Include="FooterRu.cs" />
-    <Compile Include="Header.cs" />
-    <Compile Include="HeaderRu.cs" />
-    <Compile Include="MainPage.cs" />
+    <Compile Include="Deved_POMs\AboutPage.cs" />
+    <Compile Include="Deved_POMs\BlogPage.cs" />
+    <Compile Include="Deved_POMs\ContactPage.cs" />
+    <Compile Include="Deved_POMs\CoursePage.cs" />
+    <Compile Include="Deved_POMs\Footer.cs" />
+    <Compile Include="Deved_POMs\FooterRu.cs" />
+    <Compile Include="Deved_POMs\GraduatePage.cs" />
+    <Compile Include="Deved_POMs\Header.cs" />
+    <Compile Include="Deved_POMs\HeaderCityRu.cs" />
+    <Compile Include="Deved_POMs\HeaderRu.cs" />
+    <Compile Include="Deved_POMs\MainPage.cs" />
+    <Compile Include="Deved_POMs\NewsPage.cs" />
+    <Compile Include="Deved_POMs\SignUpCourseForm.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Deved_POMs\SocialExpectedText.cs" />
+    <Compile Include="Test\DevedTest.cs" />
+    <Compile Include="Test\FooterLinkTest.cs" />
+    <Compile Include="Test\HeaderLinkTest.cs" />
+    <Compile Include="Test\SignUpCourseTest.cs" />
+    <Compile Include="Test\SocialTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
