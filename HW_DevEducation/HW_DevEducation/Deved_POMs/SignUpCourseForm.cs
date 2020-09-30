@@ -68,11 +68,6 @@ namespace HW_DevEducation.Deved_POMs
             return driver.FindElement(locator).Text;
         }
 
-        public void ClicOnNameOfForm()
-        {
-            driver.FindElement(userPhoneInput).Click();
-        }
-
         public SignUpCourseForm ChooseCity(int index)
         {
             IWebElement dropdownCity = driver.FindElement(By.Id("city-popup"));

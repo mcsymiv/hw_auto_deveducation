@@ -38,7 +38,7 @@ namespace HW_DevEducation.Test
         [TestCase("Харьков")]
         [TestCase("Баку")]
         [TestCase("Санкт-Петербург")]
-        public void UserOpensKyivCoursePage(string localization)
+        public void MapLinksCheckOnSubDomains(string localization)
         {
             string localCityText = string.Empty;
             switch (localization)

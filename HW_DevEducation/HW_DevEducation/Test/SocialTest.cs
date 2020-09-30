@@ -39,7 +39,7 @@ namespace HW_DevEducation.Test
         [TestCase("DevEducation")] //Youtube 
         [TestCase("Международный IT-колледж DevEducation")] //LinkedIn
         [TestCase("@DevEducation2")] //Twitter
-        public void UserOpensSocialPage(string localization)
+        public void UserOpensSocialPages(string localization)
         {
             string actualText = string.Empty;
             switch (localization)

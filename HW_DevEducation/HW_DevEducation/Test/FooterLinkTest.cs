@@ -54,7 +54,7 @@ namespace HW_DevEducation.Test
         [TestCase("Блог")]
         [TestCase("О нас")]
         [TestCase("Наши контакты")]
-        public void UserOpensPagesViaHeaderLinks(string pageTitle)
+        public void PagesFooterLinksCheck(string pageTitle)
         {
             string actualPageTitle = string.Empty;
             switch (pageTitle)
