@@ -26,5 +26,14 @@ namespace HW_DevEducation
         {
             driver.FindElement(locator).Click();
         }
+        public void ClickOnFooterLink(By locator)
+        {
+            driver.FindElement(locator).Click();
+        }
+
+        public string CurrentCityText(By locator)
+        {
+            return driver.FindElement(locator).Text;
+        }
     }
 }
